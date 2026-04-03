@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 95%;
+    --primary: 270 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 10% 14%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 330 80% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 10% 18%;
+    --input: 240 10% 18%;
+    --ring: 270 80% 60%;
+    --radius: 0.75rem;
+    --neon-purple: 270 80% 60%;
+    --neon-pink: 330 80% 60%;
+    --neon-blue: 210 80% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(
+    -45deg,
+    hsl(270 80% 10%),
+    hsl(240 10% 4%),
+    hsl(330 80% 10%),
+    hsl(210 80% 10%)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px hsl(270 80% 60% / 0.3),
+              0 0 30px hsl(270 80% 60% / 0.1);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px hsl(270 80% 60% / 0.5),
+               0 0 20px hsl(270 80% 60% / 0.3);
+}
